@@ -13,15 +13,22 @@ export class AppComponent {
 
   constructor () {}
 
+  showLatitude(){
+    alert(this.latitude);
+    console.log(this.latitude);
+  }
+
+  showLongitude(){
+    alert(this.longitude);
+    console.log(this.longitude);
+  }
   ngOnInit(){
     navigator.geolocation.watchPosition((position) => {
-      setInterval( () => {
+
       this.latitude = position.coords.latitude;
       this.longitude = position.coords.longitude;
       console.log(this.latitude);
       console.log(this.longitude);
-    }, 1000);
-
 
     });
   }
