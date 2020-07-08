@@ -14,7 +14,7 @@ export class AppComponent {
   constructor () {}
 
   ngOnInit(){
-    navigator.geolocation.getCurrentPosition((position) => {
+    navigator.geolocation.watchPosition((position) => {
       setInterval( () => {
       this.latitude = position.coords.latitude;
       this.longitude = position.coords.longitude;
