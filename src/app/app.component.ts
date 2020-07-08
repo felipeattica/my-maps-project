@@ -15,8 +15,14 @@ export class AppComponent {
 
   ngOnInit(){
     navigator.geolocation.getCurrentPosition((position) => {
+      setInterval( () => {
       this.latitude = position.coords.latitude;
       this.longitude = position.coords.longitude;
+      console.log(this.latitude);
+      console.log(this.longitude);
+    }, 1000);
+
+
     });
   }
 }
